@@ -1,0 +1,17 @@
+.subtext{
+    font-size: 12px;
+    margin: -34px 0px 0px 91px;
+}
+.radio-box{
+    width: 100%;
+    height: 50px;
+    border: 1px solid #007BFF;
+}
+.custom-label{
+    position: absolute;
+    top: 12px;
+    left: 36px;
+}
+::ng-deep .datepicker-default .day-unit.is-selected {
+    background: #007BFF !important;
+}

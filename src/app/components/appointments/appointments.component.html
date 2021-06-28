@@ -1,0 +1,70 @@
+<div class="container-fluid p-5">
+    <div class="row mt-4">
+        <p style="font-size: 18px;font-weight: 600;">Appointments&nbsp; <span class="text-secondary"
+                style="font-size: 14px;">&nbsp;|&nbsp; Home > Appointments</span></p>
+    </div>
+    <div class="row mt-3">
+        <div class="col-4">
+            <ngx-datepicker [(ngModel)]="date" (ngModelChange)="slotFilter(date)"></ngx-datepicker>
+        </div>
+        <div class="col-8">
+            <div class="card p-3 shadow">
+                <div class="row">
+                    <div class="col-8">
+                        <div class="d-flex">
+                            <img src="../../../assets/sun.png" style="width: 83px;">
+                            <span class="ml-2" style="font-size: 16px;">Morning</span>
+                        </div>
+                        <p class="text-secondary subtext">09:00 AM to 12:00 PM</p>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex pointer float-right">
+                            <img src="../../../assets/plus-lg.svg" class="text-primary">
+                            <span class="ml-2 text-primary" (click)="openSlot('Morning')">Add Slots</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <ng-container *ngFor="let slot of slotArr">
+                        <ng-container *ngIf="slot?.period === 'Morning'">
+                            <div class="col-2 mt-3">
+                                <div class="radio-box card text-center p-3">
+                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+                                    <span class="text-secondary custom-label">{{slot?.slotFrom | uppercase}}</span>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </ng-container>
+                </div>
+                <hr class="mt-5 mb-5">
+                <div class="row">
+                    <div class="col-8">
+                        <div class="d-flex">
+                            <img src="../../../assets/sun.png" style="width: 83px;">
+                            <span class="ml-2" style="font-size: 16px;">Evening</span>
+                        </div>
+                        <p class="text-secondary subtext">05:00 PM to 09:00 PM</p>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex pointer float-right">
+                            <img src="../../../assets/plus-lg.svg" class="text-primary">
+                            <span class="ml-2 text-primary" (click)="openSlot('Evening')">Add Slots</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <ng-container *ngFor="let slot of slotArr">
+                        <ng-container *ngIf="slot?.period === 'Evening'">
+                            <div class="col-2 mt-3 mb-4">
+                                <div class="radio-box card text-center p-3">
+                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+                                    <span class="text-secondary custom-label">{{slot?.slotFrom | uppercase}}</span>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

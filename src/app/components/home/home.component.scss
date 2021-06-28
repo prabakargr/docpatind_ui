@@ -1,0 +1,75 @@
+ .custom-nav-tabs{
+    width: 90% !important;
+    margin: 0 auto !important;
+ }
+ .custom-tab{
+    border: none;
+    background: #007BFF !important;
+     color: white !important;
+    border-radius: 20px 20px 0px 0px;
+    padding: 9px 66px;
+ }
+ .custom-tab-content{
+     border: none;
+     border-radius: 20px 20px;
+     background: white;
+ }
+
+ .custom-tab:hover{
+     background: white !important;
+     color: #007BFF !important;
+ }
+ .custom-tab-active{
+    background: white !important;
+    color: #007BFF !important;
+ }
+ .custom-thead{
+    th {
+        border: none !important;
+        font-size: 14px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+ }
+ .color-box{
+    width: 35px;
+    height: 35px;
+    background: blanchedalmond;
+    padding: 6px 0px 0px 12px;
+    color: yellowgreen;
+    margin-top: 8px;
+}
+.dprof{
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    background-color: aliceblue;
+}
+.subtext{
+    margin: -26px 0px 0px 53px;
+    font-size: 14px;
+}
+.min-box{
+    height: 35px;
+    width: 113px;
+    background-color: rgba(224, 44, 44,0.5);
+    padding: 6px 0px 0px 25px;
+    color: darkred;
+}
+.custom-btn{
+    background: white;
+    padding: 6px 22px;
+    border: none;
+    border-radius: 45px;
+    font-weight: 500;
+    font-size: 14px;
+}
+.tbody:hover{
+    box-shadow: 0 20px 60px 0 transparent;
+    -webkit-transform: translate(0,-10px);
+    transform: translate(0,-10px);
+    background: white !important;
+}
+.not-arrived{
+    background-color: rgba(57, 102, 201, 0.5) !important;
+    color: rgb(8, 78, 170) !important;
+}

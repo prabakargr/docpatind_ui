@@ -1,0 +1,89 @@
+<div class="container-fluid">
+    <div class="row p-5">
+        <h3>Home</h3>
+    </div>
+    <ul class="nav nav-tabs custom-nav-tabs" role="tablist">
+        <ng-container *ngFor="let tabs of tabName">
+            <li class="nav-item" (click)="onTabChange(tabs?.name)">
+                <a class="nav-link active shadow custom-tab mr-2" [ngClass]="{'custom-tab-active':selectedTabName === tabs?.name}" data-toggle="tab" href="#tabs-1" role="tab">
+                   <p class="m-0" style="font-size: 25px;font-weight: 600;">{{tabs?.value}}</p>
+                   <p class="m-0" style="font-size: 15px;font-weight: 600;">{{tabs?.name}}</p>
+                </a>
+            </li>
+        </ng-container>
+    </ul><!-- Tab panes -->
+    <div class="tab-content custom-nav-tabs custom-tab-content shadow">
+    <div class="tab-pane active" id="tabs-1" role="tabpanel" style="padding: 30px;">
+            
+<div class="table-responsive"> 
+    <table class="table">
+      <thead class="custom-thead">
+        <tr>
+          <th scope="col" colspan="2"></th>
+          <th scope="col">PATIENT</th>
+          <th scope="col">CONTACT</th>
+          <th scope="col">APPOINTMENT</th>
+          <th scope="col">WAITED</th>
+          <th scope="col" colspan="2"></th>
+        </tr>
+      </thead>
+      <ng-container *ngIf="selectedTabName != 'Queu'">
+        <tbody>
+            <tr class="text-center mt-2">
+                <td colspan="7">
+                    <p class="text-center text-secondary" style="font-size: 16px;font-weight: bold;">No Data Found</p>
+                </td>
+            </tr>
+        </tbody>
+    </ng-container>
+      <ng-container *ngFor="let data of patient;let i = index;">
+     <ng-container *ngIf="patient.length > 0">
+        <tbody class="tbody">
+            <tr>
+                <th scope="row">
+                  <p class="text-secondary m-0" style="margin-top: 5px !important;font-size: 14px;">..</p> 
+                  <p class="text-secondary m-0" style="margin-top: -14px !important;font-size: 14px;">..</p> 
+                  <p class="text-secondary m-0" style="margin-top: -14px !important;font-size: 14px;">..</p> 
+                </th>
+                <th>
+                    <div class="color-box">
+                        {{i + 1}}
+                    </div>
+                </th>
+                <td>
+                  <div class="d-flex">
+                      <img src="../assets/doctor.png" class="dprof">
+                     <p>{{data?.bookedBy?.name}}</p>
+                    </div>
+                <p class="text-secondary d-block subtext">{{data?.bookedBy?.gender}}, {{data?.bookedBy?.age}} yr</p>
+                </td>
+                <td>
+                    <p class="text-secondary m-0" style="margin-top: 13px !important;">{{data?.bookedBy?.contact}}</p>
+                </td>
+                <td><p class="text-secondary m-0" style="margin-top: 13px !important;">{{data?.slotDate}}</p></td>
+                <td>
+                    <div class="min-box" [ngClass]="{'not-arrived':data?.bookedBy?.waited === 'Not Arrived'}">
+                        {{data?.bookedBy?.waited}}
+                    </div></td>
+                <td>
+                  <button class="custom-btn shadow ml-5 text-secondary">
+                      <img src="../../../assets/vitals.png" style="width: 24px;">&nbsp; Vitals
+                  </button>
+                </td>
+                <td><p class="text-secondary m-0" style="font-size: 21px;font-weight: bold;">...</p></td>
+              </tr>
+      </tbody>
+     </ng-container>
+    </ng-container>
+    </table>
+    </div>
+    
+        </div>
+        <div class="tab-pane" id="tabs-2" role="tabpanel">
+            <p>Second Panel</p>
+        </div>
+        <div class="tab-pane" id="tabs-3" role="tabpanel">
+            <p>Third Panel</p>
+        </div>
+    </div>
+</div>

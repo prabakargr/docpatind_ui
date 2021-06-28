@@ -1,0 +1,37 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic);
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.custom-nav{
+    background: white;
+}
+.dprof{
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    background-color: aliceblue;
+}
+.subtext{
+    margin: -26px 0px 0px 66px;
+    font-size: 14px;
+}
+.subtext2{
+    margin: -26px 0px 0px 70px;
+    font-size: 16px;
+}
+.custom-btn{
+    background: white;
+    padding: 6px 22px;
+    border: none;
+    border-radius: 45px;
+    font-weight: 500;
+    outline: none;
+}
+i.material-icons:hover:after {
+    transform: scale(1);
+}
+.active-btn{
+    background: #007BFF !important;
+    color: white !important;
+}
